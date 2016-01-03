@@ -36,7 +36,7 @@ program
   .name(p.name)
   .description(p.description)
   .version(p.version)
-  .option('-s, --startdate [date]', 'Set the start date (rounded to week)')
+  .option('-s, --startdate [date]', 'Set the start date (rounded to week) yyyy-mm-dd')
   .option('-p, --push', 'Push to origin')
   .option('-f, --force', 'Force push')
   .option('-t, --text [text]', 'Text to draw')
