@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 import { execSync } from 'child_process';
-import { randomBytes } from 'crypto';
-import { mkdirSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { join } from 'path';
 import moment from 'moment';
 import { terminal as term } from 'terminal-kit';
@@ -38,20 +37,14 @@ program
   .description(p.description)
   .version(p.version)
   .option('-s, --startdate [date]', 'Set the start date (rounded to week)')
-  .option('-o, --origin [url]', 'Add origin url')
   .option('-p, --push', 'Push to origin')
   .option('-f, --force', 'Force push')
   .option('-t, --text [text]', 'Text to draw')
-  .option('-b, --branch [branch]', 'Set the branch')
   .option('-m, --multiplier [number]', 'Commit multiplier', '1');
 
 program.parse();
 
 const options = program.opts();
-
-if (options.push && !options.origin) {
-  console.warn('Option --origin required');
-}
 
 let startDate: moment.Moment;
 let pattern: string[];
@@ -90,11 +83,9 @@ let seconds = startDate.unix();
 const file = 'readme.md';
 
 writeFileSync(join(file), readme);
-execSync(`git add ${file}`);
+execSync(`git add .`);
 
 term.windowTitle(p.name);
-term.reset();
-term.hideCursor();
 
 const maxWeeks = Math.max(...matrix.map(line => line.length));
 const area = maxWeeks * dayInWeek;
@@ -123,9 +114,9 @@ term.moveTo(1, dayInWeek + 1);
 term.eraseLine();
 term.hideCursor(false);
 
-console.info(`file generated (${commits} commits), starting date ${startDate.format('ddd MMM DD YYYY')}`);
+console.info(`file generated with (${commits} commits), starting date ${startDate.format('ddd MMM DD YYYY')}`);
 
 if (options.push) {
   process.stdout.write('Pushing... ');
-  execSync(`git push ${options.force ? '--force' : ''} -u origin ${options.branch || 'main'}`);
+  execSync(`git push ${options.force ? '--force' : ''}`);
 } 
