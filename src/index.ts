@@ -53,7 +53,7 @@ if (options.startdate) {
   startDate = moment(options.startdate);
   startDate.day(0);
 } else {
-  startDate = moment('/01/01' + new Date().getFullYear());
+  startDate = moment(`${new Date().getFullYear()}-01-01`);
   startDate.day(0);
 }
 startDate.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
