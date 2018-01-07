@@ -87,13 +87,10 @@ pattern = pattern.map(l => l.replace(/ /g, '0'));
 const matrix = pattern.map(line => line.split('').map(c => parseInt(c)));
 
 let seconds = startDate.unix();
-const folder = 'contribution-graph-' + randomBytes(6).toString('hex');
 const file = 'readme.md';
 
-mkdirSync(folder);
-execSync(`git init ${folder}`);
-writeFileSync(join(folder, file), readme);
-execSync(`git -C ${folder} add ${file}`);
+writeFileSync(join(file), readme);
+execSync(`git add ${file}`);
 
 term.windowTitle(p.name);
 term.reset();
@@ -115,7 +112,7 @@ for (let week = 0; week < maxWeeks; week++) {
       let progress2 = mapRange(commit, 0, commitsPerDay - 1, 0, chars.length - 1);
       if (isNaN(progress2)) progress2 = chars.length - 1;
       term.moveTo(week + 1, day + 1, chars[Math.floor(progress2)]);
-      execSync(`git -C ${folder} commit --allow-empty --date="${seconds}" -am '${p.name}'`);
+      execSync(`git commit --allow-empty --date="${seconds}" -am '${p.name}'`);
       commits++;
     }
     seconds += 24 * 60 * 60;
@@ -126,14 +123,9 @@ term.moveTo(1, dayInWeek + 1);
 term.eraseLine();
 term.hideCursor(false);
 
-console.info(`${folder} generated (${commits} commits), starting date ${startDate.format('ddd MMM DD YYYY')}`);
-
-if (options.origin) {
-  console.info(`Adding origin ${options.origin}`);
-  execSync(`git -C ${folder} remote add origin ${options.origin}`);
-}
+console.info(`file generated (${commits} commits), starting date ${startDate.format('ddd MMM DD YYYY')}`);
 
 if (options.push) {
   process.stdout.write('Pushing... ');
-  execSync(`git -C ${folder} push ${options.force ? '--force' : ''} -u origin ${options.branch || 'main'}`);
+  execSync(`git push ${options.force ? '--force' : ''} -u origin ${options.branch || 'main'}`);
 } 
