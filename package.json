@@ -1,6 +1,6 @@
 {
   "name": "contribution-graph",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A tool to analyze and visualize git contributions and commit patterns",
   "keywords": [
     "git",
@@ -28,7 +28,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bsbhandari/contribution-graph.git"
+    "url": "https://github.com/bsbhandari/contribution-graph.git"
   },
   "bugs": {
     "url": "https://github.com/bsbhandari/contribution-graph/issues"
@@ -39,12 +39,12 @@
   },
   "dependencies": {
     "commander": "^13.1.0",
-    "contribution-graph": "^1.0.2",
+    "contribution-graph": "^1.0.3",
     "moment": "^2.30.1",
     "terminal-kit": "^3.1.2"
   },
   "bin": {
-    "contribution-graph": "./index.js"
+    "contribution-graph": "index.js"
   },
   "files": [
     "index.js",
