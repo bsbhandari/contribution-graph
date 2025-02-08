@@ -1,0 +1,43 @@
+{
+  "name": "git-contribution",
+  "version": "1.0.0",
+  "description": "A tool to analyze and visualize git contributions and commit patterns",
+  "main": "index.js",
+  
+  "type": "module",
+  "keywords": [
+    "git",
+    "contribution",
+    "commits",
+    "analytics",
+    "repository",
+    "version-control",
+    "git-stats",
+    "commit-history",
+    "contribution-graph",
+    "developer-tools",
+    "git-metrics",
+    "commit-analysis",
+    "repository-stats",
+    "git-visualization",
+    "collaboration-tools",
+    "code-contribution",
+    "git-analytics",
+    "commit-patterns",
+    "development-metrics",
+    "team-contributions"
+  ],
+  "author": "Bhupendra Singh Bhandari",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bsbhandari/git-contribution.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bsbhandari/git-contribution/issues"
+  },
+  "homepage": "https://github.com/bsbhandari/git-contribution#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
