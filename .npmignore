@@ -1,9 +1,0 @@
-test/
-coverage/
-.git/
-.github/
-.gitignore
-jest.config.js
-.babelrc
-node_modules/
-*.log 
