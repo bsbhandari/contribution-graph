@@ -3,7 +3,7 @@ import { execSync } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 
-describe('git-contribution', () => {
+describe('contribution-graph', () => {
   // Mock the execSync function
   jest.spyOn(child_process, 'execSync');
 

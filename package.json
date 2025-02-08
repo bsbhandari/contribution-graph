@@ -1,5 +1,5 @@
 {
-  "name": "git-contribution",
+  "name": "contribution-graph",
   "version": "1.0.0",
   "description": "A tool to analyze and visualize git contributions and commit patterns",
   "main": "index.js",
@@ -31,12 +31,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bsbhandari/git-contribution.git"
+    "url": "git+https://github.com/bsbhandari/contribution-graph.git"
   },
   "bugs": {
-    "url": "https://github.com/bsbhandari/git-contribution/issues"
+    "url": "https://github.com/bsbhandari/contribution-graph/issues"
   },
-  "homepage": "https://github.com/bsbhandari/git-contribution#readme",
+  "homepage": "https://github.com/bsbhandari/contribution-graph#readme",
   "engines": {
     "node": ">=14.0.0"
   },
@@ -50,5 +50,16 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "bin": {
+    "contribution-graph": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 } 

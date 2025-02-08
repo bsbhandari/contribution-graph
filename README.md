@@ -1,1 +1,1 @@
-# git-contribution
+# contribution-graph

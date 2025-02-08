@@ -66,7 +66,7 @@ program
     let matrix = pattern.map(line => line.split('').map(c => parseInt(c)));
     
     let seconds = startDate.unix();
-    const folder = 'git-contribution-' + crypto.randomBytes(6).toString('hex'), file = 'readme.md';
+    const folder = 'contribution-graph-' + crypto.randomBytes(6).toString('hex'), file = 'readme.md';
     fs.mkdirSync(folder);
     execSync(`git init ${folder}`);
     fs.writeFileSync(`./${folder}/${file}`, readme);
