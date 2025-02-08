@@ -15,7 +15,7 @@ const p = require('./package.json'),
 let alphabet = require('./a');
 
 program
-	.version(p.version)
+	.version('1.0.0')
 	.option('-s, --startdate [date]', 'Set the start date (rounded to week)')
 	.option('-o, --origin [url]', 'Add origin url')
 	.option('-p, --push', 'Push to origin')
