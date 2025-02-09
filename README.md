@@ -1,1 +1,1 @@
-# contribution-graph
+This is a tool to visualize git contributions and commit patterns
