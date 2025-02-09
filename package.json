@@ -1,6 +1,6 @@
 {
   "name": "contribution-graph",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "A tool to analyze and visualize git contributions and commit patterns",
   "keywords": [
     "git",

@@ -4,7 +4,6 @@ const execSync = require('child_process').execSync;
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
-const program = require('commander');
 const moment = require('moment');
 const term = require('terminal-kit').terminal;
 const p = require('./package.json'),
@@ -14,15 +13,24 @@ const p = require('./package.json'),
 
 let alphabet = require('./a');
 
+const { Command } = require('commander');
+const program = new Command();
+
 program
-	.version('1.0.0')
-	.option('-s, --startdate [date]', 'Set the start date (rounded to week)')
-	.option('-o, --origin [url]', 'Add origin url')
-	.option('-p, --push', 'Push to origin')
-	.option('-f, --force', 'Force push')
-	.option('-t, --text [text]', 'Text to draw')
-    .option('-b, --branch [branch]', 'Set the branch')
-	.parse(process.argv);
+  .name(p.name)
+  .description(p.description)
+  .version(p.version);
+
+program
+.option('-s, --startdate [date]', 'Set the start date (rounded to week)')
+.option('-o, --origin [url]', 'Add origin url')
+.option('-p, --push', 'Push to origin')
+.option('-f, --force', 'Force push')
+.option('-t, --text [text]', 'Text to draw')
+.option('-b, --branch [branch]', 'Set the branch');
+
+program.parse();
+
 
 
     if (process.argv.length < 3) {
