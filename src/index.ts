@@ -17,7 +17,13 @@ interface PackageJson {
 const p: PackageJson = require('../package.json');
 const dayInWeek = 7;
 const chars = ['░', '▒', '▓', '█'];
-const readme = 'This is a tool to visualize git contributions and commit patterns';
+const readme = `This is a tool to visualize git contributions and commit patterns.
+
+Usage:
+  cg -s 'YYYY-MM-DD' -t 'text' 
+  cg -s '2024-01-01' -t 'text' -m 20 
+  cg -s '2024-01-01' -t 'text' -m 20 --push --force
+`;
 
 const mapRange = (
   x: number,
