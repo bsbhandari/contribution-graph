@@ -1,6 +1,6 @@
 {
   "name": "contribution-graph",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A tool to analyze and visualize git contributions and commit patterns",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
